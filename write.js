@@ -27,6 +27,21 @@ redis.smembers('visited').then(function(res){
 	});
 });
 
+
+const s2 = writeLineStream(fs.createWriteStream('./tood.txt'), {
+  newline: '\n',
+  cacheLines: 100
+});
+
+redis.smembers('tood').then(function(res){
+        res.forEach(function(r){
+                s2.write(r);
+        });
+});
+
+
+
+
 s.on('end', () => {
   console.log('end');
 });
