@@ -49,3 +49,22 @@ s.on('end', () => {
 s.on('error', (err) => {
   console.error(err);
 });
+
+
+
+
+s1.on('end', () => {
+  console.log('end');
+});
+s1.on('error', (err) => {
+  console.error(err);
+});
+
+
+
+s2.on('end', () => {
+  console.log('end');
+});
+s2.on('error', (err) => {
+  console.error(err);
+});
